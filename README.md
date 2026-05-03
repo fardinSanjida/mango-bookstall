@@ -1,4 +1,4 @@
-# BookNest - Mango Bookstall
+# BookNest - Mango BookNest
 
 BookNest is an online book borrowing platform built for the Category A8 Mango assignment. It digitizes a small library experience where users can browse books, filter by category, view protected book details, borrow a book, and manage their profile.
 
