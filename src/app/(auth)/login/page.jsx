@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import PasswordInput from "@/component/PasswordInput";
 import Toast from "@/component/Toast";
 import { authClient } from "@/lib/auth-client";
 
@@ -60,13 +61,7 @@ export default function LoginPage() {
             </label>
             <label className="block text-sm font-semibold text-[#28170c]">
               Password
-              <input
-                name="password"
-                type="password"
-                required
-                placeholder="Enter your password"
-                className="input mt-2 w-full rounded-md border-[#eadfce] bg-[#fffaf3] focus:border-[#d77716]"
-              />
+              <PasswordInput placeholder="Enter your password" />
             </label>
             <Toast type="error">{error}</Toast>
             <button className="btn w-full border-0 bg-gradient-to-r from-[#5a2605] to-[#a84c09] text-white shadow-md hover:from-[#783409] hover:to-[#c45d0d]">
