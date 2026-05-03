@@ -1,9 +1,26 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import BookCard from "@/component/BookCard";
 import { books } from "@/data/books";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function Home() {
+  const router = useRouter();
+  const { user, loading } = useAuth();
   const featuredBooks = books.slice(0, 4);
+
+  useEffect(() => {
+    if (!loading && !user) router.replace("/login");
+  }, [loading, router, user]);
+
+  if (loading) {
+    return <div className="min-h-[50vh] px-5 py-16 text-center font-semibold">Loading...</div>;
+  }
+
+  if (!user) return null;
 
   return (
     <div className="animate__animated animate__fadeIn">
