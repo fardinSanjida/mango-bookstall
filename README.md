@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BookNest - Mango Bookstall
 
-## Getting Started
+BookNest is an online book borrowing platform built for the Category A8 Mango assignment. It digitizes a small library experience where users can browse books, filter by category, view protected book details, borrow a book, and manage their profile.
 
-First, run the development server:
+## Live URL
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Add your deployed link here after hosting:
+
+```txt
+https://your-booknest-live-url.vercel.app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Responsive header with logo, Home, All Books, My Profile, login state, user name, and logout.
+- Custom footer with social links and contact information.
+- Home banner with "Find Your Next Read", marquee announcement, featured books, category exploration, and platform benefits.
+- Local 12-book JSON data using `id`, `title`, `author`, `description`, `category`, `available_quantity`, and `image_url`.
+- All Books page with title search and functional left category sidebar for Story, Tech, and Science.
+- Private book details page with cover, author, description, available quantity, borrow button, and confirmation toast.
+- Login and registration pages with email/password forms, Google login button, route redirects, and form error messages.
+- Private My Profile page with user information and a profile update route.
+- Better Auth server route and MongoDB adapter configuration scaffold for production credentials.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- Next.js 16 App Router
+- React 19
+- Tailwind CSS 4
+- DaisyUI 5
+- Better Auth
+- MongoDB driver
+- Animate.css
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create a `.env.local` file from `.env.example`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+cp .env.example .env.local
+```
 
-## Deploy on Vercel
+Required production variables:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```txt
+BETTER_AUTH_SECRET=
+BETTER_AUTH_URL=
+MONGODB_URI=
+MONGODB_DB=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The current UI also includes a local demo auth fallback so the assignment can be reviewed without real OAuth credentials.
+
+## Run Locally
+
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`.
+
+## Build
+
+```bash
+npm run lint
+npm run build
+```
+
+## Deployment Notes
+
+This project is ready for Vercel-style hosting. Add the environment variables in the hosting dashboard so `/api/auth/[...all]` can use Better Auth with MongoDB and Google credentials. Next.js App Router routes are file-based, so refreshing `/books`, `/books/1`, `/profile`, `/profile/update`, `/login`, and `/register` works without a client-side routing error.
+
+## Submission
+
+GitHub Repo Link:
+
+Live Link:
