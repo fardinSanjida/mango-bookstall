@@ -1,12 +1,11 @@
-import Navber from '@/component/Navber';
+import Header from '@/component/Header';
 import React from 'react';
 
 const AuthLayout = ({children}) => {
     return (
-        <div>
-        <Navber />
-        {children}
-            
+        <div className="min-h-screen bg-[#fffaf3]">
+            <Header />
+            {children}
         </div>
     );
 };

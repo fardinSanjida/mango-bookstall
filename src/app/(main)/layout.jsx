@@ -1,14 +1,13 @@
 import React from 'react';
 import Header from '@/component/Header';
-import Navber from '@/component/Navber';
+import Footer from '@/component/Footer';
 
-const MainLayout
- = ({children}) => {
+const MainLayout = ({children}) => {
     return (
-        <div>
+        <div className="min-h-screen">
             <Header />
-       <Navber /> 
-            {children}  
+            <main>{children}</main>
+            <Footer />
         </div>
     );
 };
